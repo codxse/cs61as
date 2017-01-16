@@ -21,3 +21,18 @@
 
 (defn sqrt [x]
   (sqrt-iter 1.0 x))
+  
+;; -----------------------------------------
+
+(defn roots [a b c]
+  (vector (/ (+ (- b) (sqrt (- (* b b)(* 4 a c))))
+             (* 2 a))
+          (/ (- (- b) (sqrt (- (* b b)(* 4 a c))))
+             (* 2 a))))
+
+(defn new-roots [a b c]
+  (let [d (sqrt (- (* b b) (* 4 a c)))
+        -b (- d)
+        a2 (* 2 a)]
+    (vector (/ (+ -b d) a2)
+            (/ (- -b d) a2))))
