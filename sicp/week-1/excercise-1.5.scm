@@ -2,9 +2,9 @@
 ; with is using applicative-order evaluation or normal order evaluation.
 ; He dofines the followint two procedure:
 
-(defn p [] (p))
+(define (p) (p))
 
-(defn test [x y]
+(define (test x y)
   (if (= x 0) 0 y))
 
 ; Then he evaluates the expression
